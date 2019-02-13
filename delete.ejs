@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eliminar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+
+
+
+    <div class="w3-container w3-center">
+        <div class="w3-panel w3-red">
+              <h2>Eliminar Musica</h2>
+        </div>
+
+            <table class="w3-table-all w3-centered w3-hoverable">
+                <thead>
+                    <tr class="w3-red">
+
+                        <% musicas.forEach(function(details) { %>
+
+
+                        
+                        <form action="/delete/<%= details._id %>" method="post" >
+                            <td><input type="text"   placeholder="Nome"  value="<%= details.name %>" name="name"  ></td>
+                            <td><input type="text"   placeholder="Tipo"  value="<%=details.type%>"   name="type" ></td>
+                            <td><input type="double" placeholder="Preco" value="<%=details.price%>"  name="price" ></td>
+                            <td><button type="submit" class="w3-button w3-light-grey w3-round-xlarge">Eliminar</button></td>
+                        </form>
+                        <form action="/show/">
+                            <td><button href="/show" class="w3-button w3-light-grey w3-round-xlarge">Retroceder</button></td>
+                        </form> 
+        
+                        <% }) %>
+
+                  </thead>    
+              </table>
+            
+</body>
+</html>
